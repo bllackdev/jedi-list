@@ -1,26 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+    <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>Jedi</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1>New Jedi</h1>
+    <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"/>
 
-        <form th:action="@{/jedi}" th:object="${jedi}" method="post">
-        <input type="text" name="name"     th:field="*{name}"     th:placeholder="Name"/> <br/>
-        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
-        <br/><br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark margin">
+        <a class="navbar-brand" href="#">
+            <img src="img/img-jedi-01.png" width="90px" height="90px">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#jedi-list">Jedi List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#new-jedi">New Jedi</a>
+                </li>
+            </ul>
+        </div>
 
-        <input type="text" name="lastName" th:field="*{lastName}" th:placeholder="LastName"/> <br/>
-        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">LastName Error</span>
-        <br/><br>
-        <button type="submit">Create a new Jedi</button>
-    </form>
+    </nav>
+
+    <h1 id="jedi-forces" class="text-center">Jedi Forces</h1>
+        <div class="container-fluid quem-somos text-center margin">
+            <h2>New Jedi</h2>
+
+            <br>
+
+            <form th:action="@{/jedi}" th:object="${jedi}" method="post">
+
+                    <div class="mb-3">
+                        <input type="text" name="name" th:field="*{name}" th:placeholder="Name" placeholder="First Name"
+                               class="form-control" id="validationName" required/> <br/>
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span><br/>
+                        <br>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" name="lastName" th:field="*{lastName}" th:placeholder="LastName" placeholder="Last Name"
+                               class="form-control" id="validationLastName" required/> <br/>
+                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">LastName Error</span>
+                            <br/><br>
+                    </div>
+
+
+
+                <h5>Jedi Classification:</h5>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="customControlValidation1" name="radio-stacked" required>
+                    <label class="custom-control-label" for="customControlValidation1">Jedi Padawan</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                    <label class="custom-control-label" for="customControlValidation2">Cavaleiro Jedi</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                    <label class="custom-control-label" for="customControlValidation3">Mestre Jedi</label>
+                </div>
+
+                <br>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Create a new Jedi</button>
+                </div>
+
+            </form>
+        </div>
 
     <br>
 
-    <a th:href="@{/jedi}">Lista Jedi</a>
+    <a th:href="@{/jedi}">Return Jedi List</a>
+
+
+    <footer class="container-fluid text-center bg-footer margin">
+        <p>Desenvolvido por BllackDev</p>
+    </footer>
+
+            <style>
+                body{
+                    font: 20px Arial, sans-serif;
+                }
+
+                .quem-somos{
+                    background-color:#BDBDBD ;
+                }
+
+                .margin{
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+
+                .parceiros{
+                    background-color: #A4A4A4;
+                }
+
+                .servicos{
+                    background-color: #848484;
+                }
+
+                .bg-footer{
+                    background-color:black;
+                    color: white;
+                }
+
+                #jedi-forces{
+                    padding-top: 15px;
+                    padding-bottom: 5px;
+                }
+            </style>
 
     </body>
 </html>

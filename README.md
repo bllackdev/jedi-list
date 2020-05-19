@@ -1,8 +1,9 @@
 # Jedi List
 Lista de Cadastro de Jedi utilizando Spring MVC.
 ________________
-##O que é Spring:
-####Spring Framework
+## O que é Spring:
+
+## Spring Framework
 - Complemento ao Java EE. Não é uma implmentação. Integração com algumas especificações
 
 - Container de Inversão de Controle - Inversion of Control (IoC)
@@ -28,7 +29,9 @@ ________________
 
 - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html
 
-##Spring Boot
+________________
+
+## Spring Boot
 - Convenção sobre Configuração.
 
 - Auto configurações por padrão.
@@ -46,7 +49,9 @@ ________________
     - https://spring.io/projects/spring-boot
     - https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/
 
-##Spring Web MVC
+________________
+
+## Spring Web MVC
 - MVC - Model, View and Controller
     - View = https://www.thymeleaf.org/
 

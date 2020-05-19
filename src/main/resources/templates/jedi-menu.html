@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!--
+    Referencia: https://getbootstrap.com.br/docs/4.1/examples/cover/#
+-->
+
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jedi</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+    <header class="masterhead-brand mb-auto">
+        <div class="inner">
+            <h3>
+                <img src="img/img-jedi-01.png" width="90px" height="90px">
+                Jedi Forces
+            </h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link" href="#jedi-list">Jedi List</a>
+                    <a class="nav-link" href="#new-jedi">New Jedi</a>
+                </nav>
+            </div>
+    </header>
+
+
+    <h1 id="jedi-forces" class="text-center">Jedi Forces</h1>
+    <br> <br>
+    <div class="parent">
+        <img src="img/icon-jedi-02.png" width="250px" height="250px">
+    </div>
+
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Desenvolvido por
+                <a href="https://github.com/bllackdev">BllackDev</a>
+            </p>
+        </div>
+    </footer>
+    </div>
+
+<style>
+    a,
+    a:focus,
+    a:hover {
+        color: #fff;
+    }
+
+    html, body{
+        font: 20px Arial, sans-serif;
+        height: 100%;
+        background-color: #333;
+    }
+
+    body {
+      display: -ms-flexbox;
+      display: flex;
+      color: #fff;
+      text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    }
+
+    .cover-container {
+        max-width: 42em;
+    }
+
+    /*
+    *Cabeçalho
+    */
+    .masthead {
+        margin-bottom: 2rem;
+    }
+
+    .masthead-brand {
+        margin-bottom: 0;
+    }
+
+    .nav-masthead .nav-link {
+      padding: .25rem 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      background-color: transparent;
+      border-bottom: .25rem solid transparent;
+    }
+
+    .nav-masthead .nav-link {
+      padding: .25rem 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      background-color: transparent;
+      border-bottom: .25rem solid transparent;
+    }
+
+    .nav-masthead .nav-link + .nav-link {
+      margin-left: 1rem;
+    }
+
+    .nav-masthead .active {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    @media (min-width: 48em) {
+      .masthead-brand {
+        float: left;
+      }
+      .nav-masthead {
+        float: right;
+      }
+    }
+
+    .bg-footer{
+        background-color:black;
+        color: white;
+    }
+
+    #jedi-forces{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    .parent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+
+    .mt-auto{
+            margin-top: auto!important;
+    }
+    footer{
+            display: block;
+    }
+
+    /*
+     * Footer
+    */
+    .mastfoot{
+            color: rgba(255, 255, 255, .5);
+    }
+</style>
+
+</body>
+</html>

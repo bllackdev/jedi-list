@@ -3,26 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Jedi</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"/>
 
-<h1>Jedi Forces</h1>
 
-<table>
-    <tr>
-        <th>NAME</th>
-        <th>LASTNAME</th>
-    </tr>
-    <tr th:each="jedi : ${allJedi}"> <!-- Vai coletar a informação e jogar na coluna Name e LastName-->
-        <td th:text="${jedi.name}"> </td>
-        <td th:text="${jedi.lastName}"> </td>
-    </tr>
-</table>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark margin">
+    <a class="navbar-brand" href="#">
+        <img src="img/img-jedi-01.png" width="90px" height="90px">
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#jedi-list">Jedi List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#new-jedi">New Jedi</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div>
+
+    <h1 id="jedi-forces" class="text-center">Jedi Forces</h1>
+    <br>
+    <div class="parent">
+        <img src="img/img-jedi-02.png" width="350" height="150px">
+        <br>
+    </div>
+    <br>
+    <div class="parent">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>LastName</th>
+            </tr>
+            <tr th:each="jedi : ${allJedi}"> <!-- Vai coletar a informação e jogar na coluna Name e LastName-->
+                <td th:text="${jedi.name}"> </td>
+                <td th:text="${jedi.lastName}"> </td>
+            </tr>
+        </table>
+    </div>
+</div>
 <br>
 
 <a href="#" th:href="@{/new-jedi}">Inserir Jedi</a>
+
+<br>
+
+<div class="alert alert-success" role="alert" th:if="${message}"
+     th:text="${message}" th:class="${'alert ' + alertClass}"/>
+
+<footer class="container-fluid text-center bg-footer">
+    <p>Desenvolvido por BllackDev</p>
+</footer>
+
+
+    <style>
+        body{
+            font: 20px Arial, sans-serif;
+        }
+
+        .quem-somos{
+            background-color:#BDBDBD ;
+        }
+
+        .margin{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .parceiros{
+            background-color: #A4A4A4;
+        }
+
+        .servicos{
+            background-color: #848484;
+        }
+
+        .bg-footer{
+            background-color:black;
+            color: white;
+        }
+
+        #jedi-forces{
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+
+        .parent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 
 </body>
 </html>
